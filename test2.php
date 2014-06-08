@@ -15,9 +15,9 @@ $images = $dom->getElementsByTagName('img');
 foreach ($images as $image) {
   $x[]= $image->getAttribute('src');
 	
-	$y= str_replace('s320x320', 's720x720', @$x[1]);
-	$y= str_replace('s200x200', 's720x720', @$x[1]);
-	$y= str_replace('s480x480', 's720x720', @$x[1]);
+	
+	$y= str_replace(array( 's320x320', 's480x480', 's200x200'), 's720x720', @$x[1]) ;
+	
 	
 	
 	
