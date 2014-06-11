@@ -1,13 +1,10 @@
 
 <?php
-if($_POST["user"]==NULL)
+if(isset($_POST['user']))
 {
-	echo "enter the username";
-}
-else {
-	$a=htmlspecialchars($_POST['user']) or die("enter a valid username"); 
-	$b="https://m.facebook.com/".$a;
-$html = @file_get_contents($b)or die("unable to open");
+$a=htmlspecialchars($_POST['user']) 
+$a="https://m.facebook.com/".$a;
+$html = @file_get_contents($a)or die("unable to open");
 $dom= new DOMDocument;
 @$dom->loadHTML($html);
 $dom->preserveWhiteSpace = false;
